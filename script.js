@@ -9,7 +9,7 @@ require([
   // --- WebMap from Portal ---
   var webmap = new WebMap({
     portalItem: {
-      id: "4e5edda66e7743eda617f7d05357d526" // your WebMap ID
+      id: "c1264c52c30e4189b0a806f053a0a6d9" 
     }
   });
 
@@ -27,7 +27,7 @@ require([
     renderer: { type: "simple", symbol: { type: "simple-marker", color: "crimson", size: 8, outline: {color: "darkred", width:1} } }
   });
 
-  // --- Chicago Rodent Sightings ---
+    // --- Chicago Rodent Sightings ---
   var rodentsGeo = new GeoJSONLayer({
     url: "https://raw.githubusercontent.com/orhuna/WebGIS_SLU_M1/main/Module%201/Assignment%201/data/rodents.geojson",
     popupTemplate: { title: "Rodent Sighting", content: "Address: {address}<br>Date: {date}" },
