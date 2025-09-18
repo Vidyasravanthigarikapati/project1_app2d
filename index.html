@@ -1,17 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>Chicago 2D MapView</title>
-  
-  <link rel="stylesheet" href="https://js.arcgis.com/4.33/esri/themes/light/main.css" />
-  <link rel="stylesheet" href="style.css" />
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
+    <title>Chicago 2D Map</title>
+    <link rel="stylesheet" href="https://js.arcgis.com/4.18/esri/css/main.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://js.arcgis.com/4.18/"></script>
+  </head>
+  <body>
+    <div id="viewDiv"></div>
 
-  <script src="https://js.arcgis.com/4.33/"></script>
-</head>
-<body>
-  <h3>Chicago 2D Map</h3>
-  <div id="viewDiv"></div>
-  <script src="script.js"></script>
-</body>
+    <!-- Buttons -->
+    <div class="top-buttons">
+      <button onclick="toggleWidget('legendDiv')">Legend</button>
+      <button onclick="toggleWidget('layerListDiv')">Layer List</button>
+    </div>
+
+    <!-- Widget Containers -->
+    <div id="legendDiv" class="widget-panel"></div>
+    <div id="layerListDiv" class="widget-panel"></div>
+
+    <script src="app.js"></script>
+  </body>
 </html>
