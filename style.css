@@ -1,16 +1,43 @@
-body, html {
-  margin: 0;
+html, body, #viewDiv {
   padding: 0;
+  margin: 0;
   height: 100%;
   width: 100%;
 }
 
-h3 {
-  margin: 10px;
-  text-align: center;
+/* Buttons on top-right */
+.top-buttons {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+.top-buttons button {
+  background: #2c3e50;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.top-buttons button:hover {
+  background: #34495e;
 }
 
-#viewDiv {
-  height: 90vh;
-  width: 100%;
+/* Widget panel */
+.widget-panel {
+  position: absolute;
+  top: 50px;
+  right: 10px;
+  width: 250px;
+  max-height: 400px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  display: none; /* hidden by default */
+  z-index: 9;
 }
