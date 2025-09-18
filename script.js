@@ -27,7 +27,7 @@ require([
     renderer: { type: "simple", symbol: { type: "simple-marker", color: "crimson", size: 8, outline: {color: "darkred", width:1} } }
   });
 
-    // --- Chicago Rodent Sightings ---
+  // --rodents geojson for extra geojson layer--
   var rodentsGeo = new GeoJSONLayer({
     url: "https://raw.githubusercontent.com/orhuna/WebGIS_SLU_M1/main/Module%201/Assignment%201/data/rodents.geojson",
     popupTemplate: { title: "Rodent Sighting", content: "Address: {address}<br>Date: {date}" },
