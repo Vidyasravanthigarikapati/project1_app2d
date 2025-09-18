@@ -1,3 +1,4 @@
+
 require([
   "esri/WebMap",
   "esri/views/MapView",
@@ -11,20 +12,46 @@ require([
     portalItem: { id: "c1264c52c30e4189b0a806f053a0a6d9" }
   });
 
-  // --- Layers ---
+  // --- Layers with Colors ---
   const neighborhoodsLayer = new GeoJSONLayer({
     url: "https://raw.githubusercontent.com/orhuna/WebGIS_SLU_M1/main/Module%201/Assignment%201/data/chicago.geojson",
-    popupTemplate: { title: "Neighborhood Info", content: "Community Name: {community}" }
+    popupTemplate: { title: "Neighborhood Info", content: "Community Name: {community}" },
+    renderer: {
+      type: "simple",
+      symbol: {
+        type: "simple-fill",
+        color: [255, 0, 0, 0.25], // semi-transparent red fill
+        outline: { color: "red", width: 1 }
+      }
+    }
   });
 
   const rodentReports = new GeoJSONLayer({
     url: "https://data.cityofchicago.org/resource/97t6-zrhs.geojson?$limit=1000",
-    popupTemplate: { title: "Rodent Complaint Details", content: "Request #: {service_request_number}<br>Address: {address}" }
+    popupTemplate: { title: "Rodent Complaint Details", content: "Request #: {service_request_number}<br>Address: {address}" },
+    renderer: {
+      type: "simple",
+      symbol: {
+        type: "simple-marker",
+        size: 6,
+        color: "green",
+        outline: { color: "white", width: 0.5 }
+      }
+    }
   });
 
   const rodentSightings = new GeoJSONLayer({
     url: "https://raw.githubusercontent.com/orhuna/WebGIS_SLU_M1/main/Module%201/Assignment%201/data/rodents.geojson",
-    popupTemplate: { title: "Rodent Sighting", content: "Location: {address}<br>Date Observed: {date}" }
+    popupTemplate: { title: "Rodent Sighting", content: "Location: {address}<br>Date Observed: {date}" },
+    renderer: {
+      type: "simple",
+      symbol: {
+        type: "simple-marker",
+        size: 6,
+        color: "purple",
+        outline: { color: "white", width: 0.5 }
+      }
+    }
   });
 
   chicagoMap.addMany([neighborhoodsLayer, rodentReports, rodentSightings]);
